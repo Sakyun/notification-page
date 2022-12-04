@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+/*@font-face {*/
+/*    font-family: "Plus Jakarta Sans";*/
+/*    src: local("Plus Jakarta Sans"), url("./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("ttf");*/
+/*    font-weight: 400;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Plus Jakarta Sans";*/
+/*    src: local("Plus Jakarta Sans"), url("./assets/fonts/static/PlusJakartaSans-Medium.ttf") format("ttf");*/
+/*    !* Medium *!*/
+/*    font-weight: 500;*/
+/*}*/
+
+/*@font-face {*/
+/*    font-family: "Plus Jakarta Sans";*/
+/*    src: local("Plus Jakarta Sans"), url("./assets/fonts/static/PlusJakartaSans-ExtraBold.ttf") format("ttf");*/
+/*    !* Extra bold *!*/
+/*    font-weight: 800;*/
+/*}*/
+
+:root {
+    --primary-red: hsl(1, 90%, 64%);
+    --primary-blue: hsl(219, 85%, 26%);
+    --white: hsl(0, 0%, 100%);
+    --very-light-grayish-blue: hsl(210, 60%, 98%);
+    --light-grayish-blue-1: hsl(211, 68%, 94%);
+    --light-grayish-blue-2: hsl(205, 33%, 90%);
+    --grayish-blue: hsl(219, 14%, 63%);
+    --dark-grayish-blue: hsl(219, 12%, 42%);
+    --very-dark-blue: hsl(224, 21%, 14%);
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: var(--very-light-grayish-blue);
+}
+
+.notifications {
+    background-color: var(--white);
+    padding: 1rem;
+}
+
+.notifications__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.notifications__title {
+    margin: 0;
+}
+
+.notifications__badge {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+}
+
+.notifications__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.notifications__mark-read-btn {
+    border: 0;
+    background-color: transparent;
+    margin-left: auto;
+}
+
+.notification__container {
+    display: grid;
+    grid-template-columns: 2.5rem auto;
+    gap: 0 0.5rem;
+    padding: 0.75rem 1rem;
+}
+
+.notification__container.comment {
+    grid-template-columns: 2.5rem auto 2.5rem;
+}
+
+.notification__container.unread {
+    background-color: var(--very-light-grayish-blue);
+    border-radius: 0.5rem;
+}
+
+.avatar {
+    grid-row: span 2;
+}
+
+.avatar img {
+    width: 2.5rem;
+}
+
+.message {
+    margin: 0;
+}
+
+.post {
+    color: var(--dark-grayish-blue);
+}
+
+.user {
+    color: var(--very-dark-blue);
+}
+
+.link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*.link:visited {*/
+/*    color: initial;*/
+/*}*/
+
+.link:hover {
+    color: var(--primary-blue);
+}
+
+.group {
+    color: var(--primary-blue);
+}
+
+.target {
+    width: 2.5rem;
+}
+
+.target-container {
+    max-width: 100%;
+}
+
+.target-container img {
+    max-width: 100%;
+}
+
+.timestamp {
+    color: var(--grayish-blue);
+}
+
+.card {
+    margin-top: 0.5rem;
+    border: 1px solid var(--light-grayish-blue-2);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    color: var(--dark-grayish-blue);
+}
+
+.card a {
+    color: var(--dark-grayish-blue);
+}
+
+.card:hover {
+    background-color: var(--light-grayish-blue-1);
+}
+
+.unread-badge {
+    margin-left: 0.5rem;
+    display: inline-block;
+    background-color: var(--primary-red);
+    border-radius: 50%;
+    height: 0.5rem;
+    width: 0.5rem;
+}
