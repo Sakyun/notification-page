@@ -40,11 +40,22 @@ body {
 .container {
     min-height: 100vh;
     background-color: var(--very-light-grayish-blue);
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 40rem) {
+    .container {
+        align-items: center;
+    }
 }
 
 .notifications {
     background-color: var(--white);
     padding: 1rem;
+    max-width: 36rem;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 3px var(--very-light-grayish-blue);
 }
 
 .notifications__header {
