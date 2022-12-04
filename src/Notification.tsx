@@ -12,12 +12,12 @@ import {
     GROUP,
     PRIVATE_MESSAGE,
     COMMENT
-} from "./notificationTypes";
-import PostNotification from "./Components/PostNotification";
-import FollowNotification from "./Components/FollowNotification";
-import GroupNotification from "./Components/GroupNotification";
-import PrivateMessageNotification from "./Components/PrivateMessageNotification";
-import CommentNotification from "./Components/CommentNotification";
+} from "./constants/notificationConstants";
+import PostNotification from "./components/PostNotification";
+import FollowNotification from "./components/FollowNotification";
+import GroupNotification from "./components/GroupNotification";
+import PrivateMessageNotification from "./components/PrivateMessageNotification";
+import CommentNotification from "./components/CommentNotification";
 
 const Notification = (props: any) => {
     switch (props.type) {
