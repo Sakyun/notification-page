@@ -1,11 +1,5 @@
-import React from 'react';
-import {
-    ICommentNotification,
-    IGroupNotification,
-    INotification,
-    IPostNotification,
-    IPrivateMessageNotification, TNotification
-} from "./INotification";
+import React, {useContext} from 'react';
+import {INotificationContext} from "./INotification";
 import {
     POST_REACTION,
     FOLLOW,
@@ -18,8 +12,13 @@ import FollowNotification from "./components/FollowNotification";
 import GroupNotification from "./components/GroupNotification";
 import PrivateMessageNotification from "./components/PrivateMessageNotification";
 import CommentNotification from "./components/CommentNotification";
+import NotificationContext from "./context/notification/notificationContext";
 
 const Notification = (props: any) => {
+    const notificationContext = useContext<INotificationContext>(NotificationContext);
+
+    const {notifications, setNotifications, markAsARead, markAllAsRead} = notificationContext;
+
     switch (props.type) {
         case POST_REACTION:
             return (

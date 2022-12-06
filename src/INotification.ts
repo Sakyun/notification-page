@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface INotification {
     id: number;
     user: string;
@@ -5,6 +7,11 @@ export interface INotification {
     type: string;
     isRead: boolean;
     timestamp: string;
+    // post?: string;
+    // group?: string;
+    // event?: string;
+    // message?: string;
+    // target?: string;
 }
 
 export interface IFollowNotification extends INotification {
@@ -33,3 +40,28 @@ export type TNotification =
     | IPrivateMessageNotification
     | ICommentNotification
     | IFollowNotification;
+
+export type NotificationsContextType = {
+    notifications : TNotification[];
+}
+
+export type actionType = {
+    type: string;
+    payload?: number | INotification[]
+};
+
+export type NotificationStateProps = {
+    children: React.ReactNode
+}
+
+export type NotificationReducer = {
+    notificationReducer: () => {};
+    initialState?:{};
+};
+
+export interface INotificationContext {
+    notifications: INotification[];
+    setNotifications: (notifications: INotification[]) => void;
+    markAsARead: (notificationId: number) => void;
+    markAllAsRead: () => void;
+}

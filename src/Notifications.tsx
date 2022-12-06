@@ -1,22 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect} from 'react';
 import Notification from "./Notification";
-import {
-    INotification,
-    IPostNotification,
-    IGroupNotification,
-    IPrivateMessageNotification,
-    ICommentNotification
-} from "./INotification";
+import {INotificationContext} from "./INotification";
 import data from './notifications.json';
+import NotificationContext from "./context/notification/notificationContext";
 
 
 const Notifications = () => {
-    const [notifications, setNotiffications] = useState<INotification[]>();
+    const notificationContext = useContext<INotificationContext>(NotificationContext);
+    const {notifications, setNotifications, markAsARead, markAllAsRead} = notificationContext;
 
     useEffect(() => {
-        // TODO Fetch data from api
-        setNotiffications(data);
-    }, []);
+        setNotifications(data);
+    },[]);
 
     return (
         <div className="notifications">
