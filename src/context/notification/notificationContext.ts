@@ -4,7 +4,7 @@ import {INotificationContext} from "../../INotification";
 const NotificationContext = createContext<INotificationContext>({
     notifications: [],
     setNotifications: () => {},
-    markAsARead: () => {},
+    markAsRead: () => {},
     markAllAsRead: () => {}
 });
 

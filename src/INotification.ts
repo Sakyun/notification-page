@@ -62,6 +62,6 @@ export type NotificationReducer = {
 export interface INotificationContext {
     notifications: INotification[];
     setNotifications: (notifications: INotification[]) => void;
-    markAsARead: (notificationId: number) => void;
+    markAsRead: (notificationId: number) => void;
     markAllAsRead: () => void;
 }

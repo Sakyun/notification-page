@@ -1,9 +1,13 @@
-import React from 'react';
-import {ICommentNotification} from "../INotification";
+import React, {useContext} from 'react';
+import {ICommentNotification, INotificationContext} from "../INotification";
+import NotificationContext from "../context/notification/notificationContext";
 
-const CommentNotification = ({user, avatar, isRead,timestamp, target}:ICommentNotification) => {
+const CommentNotification = ({id, user, avatar, isRead, timestamp, target}: ICommentNotification) => {
+    const notificationContext = useContext<INotificationContext>(NotificationContext);
+    const {markAsRead} = notificationContext;
+
     return (
-        <div className={`notification__container comment ${!isRead ? 'unread' : ''}`}>
+        <div className={`notification__container comment ${!isRead ? 'unread' : ''}`} onClick={() => markAsRead(id)}>
             <div className="avatar">
                 <img src={`./images/${avatar}`} alt={user}/>
             </div>

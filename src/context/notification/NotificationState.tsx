@@ -3,7 +3,7 @@ import NotificationContext from "./notificationContext";
 import notificationReducer from "./notificationReducer";
 import {
     MARK_AS_READ,
-    MARK_AS_ALL_READ,
+    MARK_ALL_AS_READ,
     SET_NOTIFICATIONS
 } from '../../constants/notificationConstants';
 import {
@@ -23,18 +23,19 @@ const NotificationState = ({children}: NotificationStateProps) => {
         dispatch({type: SET_NOTIFICATIONS, payload: notifications});
     }
 
-    const markAsARead = (notificationId: number) => {
+    const markAsRead = (notificationId: number) => {
+        console.log('mark as read called');
         dispatch({type: MARK_AS_READ, payload: notificationId});
     };
 
     const markAllAsRead = () => {
-        dispatch({type: MARK_AS_ALL_READ});
+        dispatch({type: MARK_ALL_AS_READ});
     };
 
     const value: INotificationContext = {
         notifications: state.notifications,
         setNotifications,
-        markAsARead,
+        markAsRead,
         markAllAsRead
     };
 

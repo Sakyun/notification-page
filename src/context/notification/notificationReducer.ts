@@ -1,6 +1,7 @@
 import {
     MARK_AS_READ,
-    MARK_AS_ALL_READ, SET_NOTIFICATIONS
+    MARK_ALL_AS_READ,
+    SET_NOTIFICATIONS,
 } from '../../constants/notificationConstants';
 
 import {NotificationsContextType, actionType} from "../../INotification";
@@ -18,7 +19,7 @@ const notificationReducer = (state: NotificationsContextType, action: actionType
                     return notification;
                 })
             }
-        case MARK_AS_ALL_READ:
+        case MARK_ALL_AS_READ:
             return {
                 notifications: state.notifications.map(notification => {
                     notification.isRead = true;

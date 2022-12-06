@@ -1,9 +1,13 @@
-import React from 'react';
-import {IPostNotification} from "../INotification";
+import React, {useContext} from 'react';
+import {INotificationContext, IPostNotification} from "../INotification";
+import NotificationContext from "../context/notification/notificationContext";
 
-const PostNotification = ({user, avatar, timestamp, post, isRead}: IPostNotification) => {
+const PostNotification = ({id, user, avatar, timestamp, post, isRead}: IPostNotification) => {
+    const notificationContext = useContext<INotificationContext>(NotificationContext);
+    const {markAsRead} = notificationContext;
+
     return (
-        <div className={`notification__container ${!isRead ? 'unread' : ''}`}>
+        <div className={`notification__container ${!isRead ? 'unread' : ''}`} onClick={() => markAsRead(id)}>
             <div className="avatar">
                 <img src={`./images/${avatar}`} alt={user}/>
             </div>

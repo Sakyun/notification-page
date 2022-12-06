@@ -1,9 +1,13 @@
-import React from 'react';
-import {IPrivateMessageNotification} from "../INotification";
+import React, {useContext} from 'react';
+import {INotificationContext, IPrivateMessageNotification} from "../INotification";
+import NotificationContext from "../context/notification/notificationContext";
 
-const PrivateMessageNotification = ({user, avatar, timestamp, isRead, message}: IPrivateMessageNotification) => {
+const PrivateMessageNotification = ({id, user, avatar, timestamp, isRead, message}: IPrivateMessageNotification) => {
+    const notificationContext = useContext<INotificationContext>(NotificationContext);
+    const {markAsRead} = notificationContext;
+
     return (
-        <div className={`notification__container ${!isRead ? 'unread' : ''}`}>
+        <div className={`notification__container ${!isRead ? 'unread' : ''}`} onClick={() => markAsRead(id)}>
             <div className="avatar">
                 <img src={`./images/${avatar}`} alt={user}/>
             </div>
