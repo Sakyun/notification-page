@@ -32,6 +32,10 @@
     --very-dark-blue: hsl(224, 21%, 14%);
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     margin: 0;
